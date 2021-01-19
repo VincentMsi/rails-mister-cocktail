@@ -1,0 +1,32 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <%= image_path("nautilus.jpg") %> );">
+
+  <div class="container" >
+    <h1>~Welcome aboard Nautilus, the underwater bar~
+</h1>
+    <p>I am Nemo, your captain</p>
+     <img src= <%= image_path("captain.jpg") %> class="card-trip-user avatar-very-large" />
+
+  </div>
+</div>
+<div class="container" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url( <%= image_path("underwater-background.jpg") %> );">
+  <div class="container">
+    <div class="row" >
+      <h1> <% @cocktails.each do |cocktail| %> </h1>
+        <div class="col-6" >
+              <div class="card-trip">
+                <img src= <%= image_path("#{cocktail.banner_url}") %> />
+                <div class="card-trip-infos">
+                  <div>
+                    <h2> <%= cocktail.name %>   </h2>
+                  </div>
+                  <img src= <%= image_path("captain.jpg") %> class="card-trip-user avatar-large" />
+                </div>
+              </div>
+            <td><%= link_to 'Show', cocktail %></td>
+         </div>
+          <% end %>
+
+    </div>
+  </div>
+</div>
+<td><%= link_to 'Create a cocktail', new_cocktail_path %></td>
